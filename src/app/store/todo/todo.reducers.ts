@@ -1,5 +1,5 @@
 import {Todo} from "../models/todo";
-import {createFeatureSelector} from "@ngrx/store";
+import {TodoActions, TodoActionTypes} from "./todo.actions";
 
 
 export interface TodoState {
@@ -10,15 +10,32 @@ export const initialState: TodoState = {
   todos: []
 }
 
-export function todoReducer(state = initialState, action: any): TodoState {
+export function todoReducer(state = initialState, action: TodoActions): TodoState {
   switch (action.type) {
+    case TodoActionTypes.LOAD_ALL_SUCCESS: {
+      return {
+        todos: action.payload
+      };
+    }
+    case TodoActionTypes.CREATE_SUCCESS: {
+      return {
+        todos: [...state.todos, action.payload]
+      };
+    }
+    case TodoActionTypes.DELETE_SUCCES: {
+      return {
+        todos: state.todos.filter(todo => todo.id !== action.payload.id)
+      }
+    }
     default:
-      return initialState;
+      return state;
   }
-
 }
 
 
-export const getTodoState = createFeatureSelector<TodoState>('todos');
+export const getTodos = (state: TodoState) => state.todos;
+
+
+
 
 

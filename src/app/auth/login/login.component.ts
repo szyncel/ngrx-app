@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../store/auth/auth.service";
 import {Store} from "@ngrx/store";
-import {getLoggedIn, State} from "../../store/auth/auth.reducers";
 import * as fromAuth from "../../store/auth/auth.actions";
 import * as fromReducer from "../../store/auth/auth.reducers";
 import {User} from "../../store/models/user";
 import {Observable} from "rxjs/Observable";
+import {getLoggedIn, State} from "../../store/auth/auth.reducers";
+
 
 @Component({
   selector: 'app-login',

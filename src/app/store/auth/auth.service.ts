@@ -14,12 +14,18 @@ export class AuthService {
   }
 
 
-  login(user: Authenticate): Observable<Authenticate> {
-    return this.http.get<Authenticate>(this.url+`users?login=${user.login}`);
+  login(user: Authenticate): Observable<User> {
+    // this.http.get(this.url + `users?login=${user.login}`);
+    if (user.login !== 'test') {
+      return _throw('Invalid username or password');
+    }
+    return of({login: user.login});
+
+
   }
 
   logout() {
-
+    return of(true);
   }
 
 

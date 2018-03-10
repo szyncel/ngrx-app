@@ -3,7 +3,6 @@ import {AuthActions, AuthActionTypes} from "./auth.actions";
 import {createFeatureSelector, createSelector} from "@ngrx/store";
 
 
-
 export interface State {
   loggedIn: boolean;
   user: User | null;
@@ -31,18 +30,9 @@ export function authReducer(state = initialState, action: AuthActions): State {
   }
 }
 
-export const getAuthState = createFeatureSelector<State>('auth');
-export const getLoggedIn = createSelector(
-  getAuthState,
-  (state: State) => state.loggedIn
-);
 
-export const getUser = createSelector(
-  getAuthState,
-  (state: State) => state.user
-);
+export const getLoggedIn = (state: State) => state.loggedIn;
 
+export const getUser = (state: State) => state.user;
 
-// export const getLoggedIn = (state: State) => state.loggedIn;
-// export const getUser = (state: State) => state.user;
 

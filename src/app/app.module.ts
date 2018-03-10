@@ -13,7 +13,9 @@ import {reducers} from "./store";
 import {EffectsModule} from "@ngrx/effects";
 import {AuthEffects} from "./store/auth/auth.effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {authReducer} from "./store/auth/auth.reducers";
+import {TodoEffects} from "./store/todo/todo.effects";
+import {AuthGuard} from "./auth-guard.service";
+
 
 
 @NgModule({
@@ -29,12 +31,12 @@ import {authReducer} from "./store/auth/auth.reducers";
     HttpClientModule,
     StoreModule.forRoot({reducers}),
     // StoreModule.forFeature('appState', reducers),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects,TodoEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25
     })
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
