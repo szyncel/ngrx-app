@@ -1,0 +1,15 @@
+mat-card {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.login-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "test",
+      "password": "test"
+    },
+    {
+      "id": 2,
+      "login": "test2",
+      "password": "test"
+    },
+    {
+      "id": 3,
+      "login": "test3",
+      "password": "test"
+    }
+  ],
+  "todo": [
+    {
+      "id": 1,
+      "title": "some comment",
+      "content": "tralslasd asd aasdlas"
+    },
+    {
+      "id": 2,
+      "title": "some comment",
+      "content": "tralslaasqwe  a1sdlas"
+    },
+    {
+      "id": 3,
+      "title": "some comment",
+      "content": "tr asdas alssd lasdlas"
+    },
+    {
+      "id": 4,
+      "title": "some comment",
+      "content": "tralslasdaaaalas"
+    }
+  ],
+  "category": [
+    {
+      "name": "first"
+    },
+    {
+      "name": "second"
+    },
+    {
+      "name": "third"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<h1>Login works</h1>
+<mat-card>
+  <form class="example-form" #f="ngForm">
+    <mat-form-field class="example-full-width">
+      <input ngModel name="login" matInput placeholder="Username">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input ngModel name="password" matInput type="password" placeholder="Password">
+    </mat-form-field>
+    <p class="login-btn">
+      <button mat-button (click)="submit(f)">Login</button>
+    </p>
+  </form>
+</mat-card>
+
+
+
+
+
+
+
+
+
