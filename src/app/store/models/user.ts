@@ -1,5 +1,5 @@
 export interface User {
-  login: string
+  login: string,
 }
 
 export interface Authenticate {
