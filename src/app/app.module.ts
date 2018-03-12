@@ -15,12 +15,14 @@ import {AuthEffects} from "./store/auth/auth.effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {TodoEffects} from "./store/todo/todo.effects";
 import {AuthGuard} from "./auth-guard.service";
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,6 @@ import {AuthGuard} from "./auth-guard.service";
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({reducers}),
-    // StoreModule.forFeature('appState', reducers),
     EffectsModule.forRoot([AuthEffects,TodoEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25

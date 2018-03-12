@@ -8,14 +8,16 @@
     <mat-form-field class="example-full-width">
       <input ngModel name="password" matInput type="password" placeholder="Password">
     </mat-form-field>
+    <ng-container *ngIf="(error$ | async) as err">
+      <p>{{err}}</p>
+    </ng-container>
     <p class="login-btn">
       <button mat-button (click)="submit(f)">Login</button>
     </p>
   </form>
+
 </mat-card>
-<ng-container *ngIf="(user$ | async)">
-  <h2>Zalogowany</h2>
-</ng-container>
+
 
 
 

@@ -1,0 +1,12 @@
+.todo-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.add-btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

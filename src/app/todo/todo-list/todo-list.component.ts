@@ -3,7 +3,10 @@ import {Store} from "@ngrx/store";
 import {AppState} from "../../store";
 import {Create, CreateSuccess, Delete, LoadAll} from "../../store/todo/todo.actions";
 import * as fromRoot from "../../store/index";
-import {TodoService} from "../../store/todo/todo.service";
+import {Todo} from "../../store/models/todo";
+import {Observable} from "rxjs/Observable";
+import {AddTodoDialogComponent} from "../add-todo-dialog/add-todo-dialog.component";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-todo-list',
@@ -11,12 +14,23 @@ import {TodoService} from "../../store/todo/todo.service";
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todos$;
+  todos$: Observable<Todo[]>;
+  loading$;
 
   constructor(private store: Store<AppState>,
-              private todoService: TodoService) {
+              public dialog: MatDialog) {
     this.todos$ = this.store.select(fromRoot.getTodos);
+    this.loading$ = this.store.select(fromRoot.getLoading);
     this.todos$.subscribe(res => console.log(res));
+  }
+
+  add() {
+    const dialogRef = this.dialog.open(AddTodoDialogComponent, {
+      height: '400px',
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(res => console.log(res));
   }
 
   ngOnInit() {
@@ -28,7 +42,7 @@ export class TodoListComponent implements OnInit {
       title: "Testowy Temat",
       note: "tralalasldasdas"
     }
-    // this.todoService.addTodo(todo).subscribe(res=>console.log(res));
+
     this.store.dispatch(new Create(todo));
   }
 

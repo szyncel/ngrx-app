@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -10,9 +10,11 @@ import {
   MatCardModule,
   MatInputModule,
   MatListModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressSpinnerModule,
+  MatMenuModule
 } from '@angular/material';
-// import { AddTodoDialogComponent } from '../add-todo-dialog/add-todo-dialog.component';
+import {AddTodoDialogComponent} from "../todo/add-todo-dialog/add-todo-dialog.component";
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import {
     MatCardModule,
     MatInputModule,
     MatListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatMenuModule
   ],
   exports: [
     MatButtonModule,
@@ -39,8 +43,12 @@ import {
     MatCardModule,
     MatInputModule,
     MatListModule,
-    MatSnackBarModule
-  ]
-  // entryComponents: [AddTodoDialogComponent]
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatMenuModule
+
+  ],
+  entryComponents: [AddTodoDialogComponent]
 })
-export class MaterialModule { }
+export class MaterialModule {
+}

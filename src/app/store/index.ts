@@ -1,6 +1,7 @@
 import {ActionReducerMap, createFeatureSelector, createSelector} from "@ngrx/store";
 
 import * as fromAuth from "./auth/auth.reducers";
+import * as fromLoginPage from "./auth/login-page.reducer";
 import * as fromTodo from "./todo/todo.reducers";
 
 import {TodoState} from "./todo/todo.reducers";
@@ -42,4 +43,14 @@ export const getTodos = createSelector(
   fromTodo.getTodos
 )
 
+export const getLoading = createSelector(
+  getTodoState,
+  fromTodo.getLoading
+)
+
 export const getLoginPageState = createFeatureSelector<LoginPageState>('loginPage');
+
+export const getError = createSelector(
+  getLoginPageState,
+  fromLoginPage.getError
+)

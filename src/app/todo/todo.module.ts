@@ -7,14 +7,19 @@ import {AddTodoDialogComponent} from './add-todo-dialog/add-todo-dialog.componen
 import {TodoService} from '../store/todo/todo.service';
 import {StoreModule} from "@ngrx/store";
 import {todoReducer} from "../store/todo/todo.reducers";
+import {TodoCardItemComponent} from './todo-card-item/todo-card-item.component';
+import {RouterModule} from "@angular/router";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
+    RouterModule,
+    FormsModule,
     StoreModule.forFeature('todos', todoReducer)
   ],
-  declarations: [TodoListComponent, TodoDetailsComponent, AddTodoDialogComponent],
+  declarations: [TodoListComponent, TodoDetailsComponent, AddTodoDialogComponent, TodoCardItemComponent],
   providers: [TodoService]
 })
 export class TodoModule {

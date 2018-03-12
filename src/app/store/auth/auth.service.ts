@@ -15,7 +15,7 @@ export class AuthService {
 
 
   login(user: Authenticate): Observable<User> {
-    // this.http.get(this.url + `users?login=${user.login}`);
+
     if (user.login !== 'test') {
       return _throw('Invalid username or password');
     }
@@ -24,7 +24,7 @@ export class AuthService {
 
   }
 
-  logout() {
+  logout(): Observable<any> {
     return of(true);
   }
 
