@@ -18,15 +18,11 @@ export class TodoListComponent implements OnInit {
   loading$;
 
   constructor(private store: Store<AppState>,
-              public dialog: MatDialog) {
-    this.todos$ = this.store.select(fromRoot.getTodos);
-    this.loading$ = this.store.select(fromRoot.getLoading);
-    this.todos$.subscribe(res => console.log(res));
-  }
+              public dialog: MatDialog) {}
 
   add() {
     const dialogRef = this.dialog.open(AddTodoDialogComponent, {
-      height: '400px',
+      height: '500px',
       width: '400px',
     });
 
@@ -35,6 +31,8 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new LoadAll());
+    this.todos$ = this.store.select(fromRoot.getTodos);
+    this.loading$ = this.store.select(fromRoot.getLoading);
   }
 
   addTodo() {
@@ -42,7 +40,6 @@ export class TodoListComponent implements OnInit {
       title: "Testowy Temat",
       note: "tralalasldasdas"
     }
-
     this.store.dispatch(new Create(todo));
   }
 

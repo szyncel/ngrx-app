@@ -18,8 +18,8 @@ export class AuthGuard implements CanActivate {
       select(getLoggedIn),
       map(authed => {
         if (!authed) {
-          this.store.dispatch(new Redirect());
-           return false;
+          // this.store.dispatch(new Redirect());
+          //  return false;
         }
         return true;
       }),

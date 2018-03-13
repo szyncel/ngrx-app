@@ -9,7 +9,7 @@ import {StoreModule} from "@ngrx/store";
 import {todoReducer} from "../store/todo/todo.reducers";
 import {TodoCardItemComponent} from './todo-card-item/todo-card-item.component';
 import {RouterModule} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -17,7 +17,9 @@ import {FormsModule} from "@angular/forms";
     MaterialModule,
     RouterModule,
     FormsModule,
-    StoreModule.forFeature('todos', todoReducer)
+    ReactiveFormsModule,
+    StoreModule.forFeature('todos', todoReducer),
+
   ],
   declarations: [TodoListComponent, TodoDetailsComponent, AddTodoDialogComponent, TodoCardItemComponent],
   providers: [TodoService]

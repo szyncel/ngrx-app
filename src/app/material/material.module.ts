@@ -12,7 +12,9 @@ import {
   MatListModule,
   MatSnackBarModule,
   MatProgressSpinnerModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import {AddTodoDialogComponent} from "../todo/add-todo-dialog/add-todo-dialog.component";
 
@@ -31,7 +33,9 @@ import {AddTodoDialogComponent} from "../todo/add-todo-dialog/add-todo-dialog.co
     MatListModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatButtonModule,
@@ -45,7 +49,9 @@ import {AddTodoDialogComponent} from "../todo/add-todo-dialog/add-todo-dialog.co
     MatListModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 
   ],
   entryComponents: [AddTodoDialogComponent]
