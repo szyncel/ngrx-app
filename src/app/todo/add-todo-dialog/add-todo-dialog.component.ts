@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from "@angular/material";
-import {FormGroup, FormBuilder} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../store';
 import {Todo} from "../../store/models/todo";
@@ -37,7 +37,7 @@ export class AddTodoDialogComponent implements OnInit {
 
     this.todos$.subscribe(res => {
       for (let todo in res) {
-        group.addControl(`${res[todo].id}`, this.fb.control(null))
+        group.addControl(`${res[todo].id}`, this.fb.control({value: null, disabled: false}, Validators.required))
       }
     })
     this.form = group;
