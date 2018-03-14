@@ -2,14 +2,11 @@
 <form [formGroup]="form" novalidate (ngSubmit)="save(form)" *ngIf="todos$ | async" >
   <p>Egzamin asdasd</p>
   <mat-form-field *ngFor="let todo of (todos$ | async)">
-    <input matInput [matDatepicker]="picker" [formControlName]="todo.id"  [placeholder]="todo.title" >
-    <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <input matInput [matDatepicker]="picker" [formControlName]="todo.id" [min]="date"  (dateInput)="test(todo.id, $event)" [placeholder]="todo.title" >
+    <mat-datepicker-toggle  matSuffix [for]="picker" ></mat-datepicker-toggle>
+    <mat-datepicker  #picker></mat-datepicker>
   </mat-form-field>
   <button mat-raised-button color="primary" [disabled]="!form.valid">Dodaj terminy</button>
-  <!--<button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>-->
-  <pre>{{form.value | json }}</pre>
-  <pre>{{form.valid | json }}</pre>
-  <pre></pre>
+  <!--<pre>{{form.value | json }}</pre>-->
 </form>
 
