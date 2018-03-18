@@ -32,6 +32,7 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new LoadAll());
     this.todos$ = this.store.select(fromRoot.getTodos);
+    this.todos$.subscribe(res=>console.log(res));
     this.loading$ = this.store.select(fromRoot.getLoading);
   }
 

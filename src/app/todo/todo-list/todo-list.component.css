@@ -10,3 +10,20 @@
   bottom: 20px;
   right: 20px;
 }
+
+
+.icons{
+  background: #e50800;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success{
+  background: #6aa929;
+}
